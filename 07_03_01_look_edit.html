@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/07_style.css" />
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/07_01_form.js"></script>
+    <title>LOOK_ADD</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./image/icon/Wear Protective Clothing.png"
+    />
+    <style>
+      /* * {
+        font-family: Century Schoolbook, Noto Serif TC;
+      } */
+      #sidebar {
+        width: 22%;
+        border-radius: 0px 500px 500px 0px;
+        background-color: rgba(255, 255, 255, 0.8);
+      }
+      #sidebar .photo {
+        width: 220px;
+        height: 220px;
+        transform: translateX(-20%);
+        margin: 0 0 25px 0;
+      }
+      #sidebar .link {
+        transform: translateX(-20%);
+        margin: 0;
+      }
+      /*  */
+      #item {
+        top: 0;
+        left: 22%;
+        width: 78%;
+        height: 100%;
+        /* background-color: rgba(0, 0, 0, 0.2); */
+        background-color: rgba(100, 100, 100, 0.2);
+        color: white;
+      }
+      /*  */
+      #item .form_pic .upload_pic_main {
+        width: 300px;
+        height: 500px;
+        background-color: rgba(255, 255, 255, 0.5);
+        /* margin-left: 5px; */
+      }
+
+      #item .form_pic {
+        width: fit-content;
+      }
+      /*  */
+      .main_text {
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-shadow: black -1px 0 5px;
+        /* color: black; */
+      }
+      #item .form_detail {
+        font-size: 1rem;
+        font-weight: bold;
+      }
+      #item .form_detail tr,
+      td {
+        padding: 5px;
+      }
+      #item .form_detail .t1 tr td:nth-child(2n-1) {
+        text-align: right;
+        text-shadow: black -1px 0 5px;
+        color: white;
+      }
+      #item .form_detail tr td:nth-child(2) {
+        padding-right: 50px;
+      }
+      #item .form_detail input,
+      select {
+        border-radius: 50px;
+        border: none;
+        padding: 5px 10px;
+      }
+
+      #item .form_detail input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+      }
+      #item .form_btn {
+        position: absolute;
+        right: 5%;
+        bottom: 5%;
+      }
+      #item .form_btn button {
+        border-radius: 500px;
+        width: 140px;
+        height: 40px;
+      }
+      #item .form_btn button.btn1 {
+        background-color: #6c9089;
+        transition: all 0.5s;
+      }
+
+      /*  */
+      #bg {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        /* z-index: 10; */
+      }
+      #cover {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        /* background-color: rgba(0, 0, 0, 0.2); */
+        backdrop-filter: blur(5px);
+      }
+      #main {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+      }
+      /*  */
+      #title {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background-color: #6c9089;
+        border-radius: 50%;
+        z-index: 20;
+        left: 15%;
+        top: 50%;
+        transform: translateY(-100px);
+        transition: all 0.5s;
+      }
+      #title .text {
+        width: fit-content;
+        font-size: 2rem;
+        font-weight: bold;
+        color: white;
+        text-align: center;
+      }
+      /*  */
+      textarea {
+        resize: none;
+        padding: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <section>
+        <div id="bg">
+          <img
+            class="w-100 h-100 object-fit-cover"
+            src="./image/h_img5.jpg"
+            alt=""
+          />
+        </div>
+        <div id="cover"></div>
+      </section>
+      <section>
+        <div id="main" class="p-0 d-flex">
+          <!-- slidebar -->
+          <div
+            id="sidebar"
+            class="position-relative shadow py-5 d-flex flex-column justify-content-center align-items-center"
+          >
+            <div class="photo">
+              <img class="" src="./image/h_img3.jpg" alt="" />
+            </div>
+            <div class="link">
+              <ul class="h-100 d-flex flex-column justify-content-between">
+                <!-- clothing start -->
+                <li>
+                  <a class="d-block d-flex active" href="#">
+                    <!-- 透過set_sidebar_link_icon()函式新增圖示與文字 -->
+                  </a>
+                </li>
+
+                <!-- on sale start -->
+                <li>
+                  <a class="d-block" href="07_02_onsale.html">
+                    <!-- 透過set_sidebar_link_icon()函式新增圖示與文字 -->
+                  </a>
+                </li>
+
+                <!-- look start -->
+                <li>
+                  <a class="d-block" href="07_03_look.html">
+                    <!-- 透過set_sidebar_link_icon()函式新增圖示與文字 -->
+                  </a>
+                </li>
+
+                <!-- dashboard start -->
+                <li>
+                  <a class="d-block" href="07_04_dashboard.html">
+                    <!-- 透過set_sidebar_link_icon()函式新增圖示與文字 -->
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- 標題區 -->
+          <div
+            id="title"
+            class="shadow d-flex align-items-center justify-content-center"
+          >
+            <span class="d-block text"
+              >EDIT<br />
+              <span
+                class="d-block"
+                style="font-size: 1.2rem; margin-top: -10px"
+              >
+                Your Look Info
+              </span>
+            </span>
+          </div>
+          <div
+            id="item"
+            class="m-0 d-flex flex-column justify-content-center align-items-center"
+          >
+            <form action="" enctype="multipart/form-data" class="d-flex">
+              <div class="form_pic">
+                <!-- 主圖上傳 -->
+                <span class="d-block main_text">*搭配上傳區</span>
+                <div
+                  id="main_imgs"
+                  class="upload_pic_main d-flex flex-wrap"
+                ></div>
+                <div class="d-flex align-items-end">
+                  <input class="p-2" type="file" id="mainLookInput"
+                  accept="image/gif, image/jpeg, image/png" multiple/ required>
+                </div>
+              </div>
+              <!-- 表單文字填寫區域 -->
+              <div class="form_detail d-flex flex-column align-items-center">
+                <!-- 單品填寫區 -->
+                <span class="d-block main_text"
+                  >(請輸入在此搭配中使用到的單品類別與編號)</span
+                >
+                <table class="t1 mt-4">
+                  <!-- 單品1 -->
+                  <tr>
+                    <!-- 單品類別選擇 -->
+                    <td>TYPE:</td>
+                    <td>
+                      <select name="look_item_1_type" id="look_item_1_type">
+                        <option value="tops">Tops</option>
+                        <option value="bottoms">Bottoms</option>
+                        <option value="outers">Outers</option>
+                        <option value="dress/skirts">Dress/Suits</option>
+                        <option value="bags/shoes">Bags/Shoes</option>
+                        <option value="accessories">Accessories</option>
+                      </select>
+                    </td>
+                    <!-- 單品上傳 -->
+                    <td>ITEM ID:</td>
+                    <td>
+                      <input
+                        type="text"
+                        placeholder="請輸入單品編號"
+                        name="look_item_1"
+                      />
+                    </td>
+                  </tr>
+                  <!-- 單品2 -->
+                  <tr>
+                    <!-- 單品類別選擇 -->
+                    <td>TYPE:</td>
+                    <td>
+                      <select name="look_item_2_type" id="look_item_2_type">
+                        <option value="tops">Tops</option>
+                        <option value="bottoms">Bottoms</option>
+                        <option value="outers">Outers</option>
+                        <option value="dress/skirts">Dress/Suits</option>
+                        <option value="bags/shoes">Bags/Shoes</option>
+                        <option value="accessories">Accessories</option>
+                      </select>
+                    </td>
+                    <!-- 單品上傳 -->
+                    <td>ITEM ID:</td>
+                    <td>
+                      <input
+                        type="text"
+                        placeholder="請輸入單品編號"
+                        name="look_item_2"
+                      />
+                    </td>
+                  </tr>
+                  <!-- 單品3 -->
+                  <tr>
+                    <!-- 單品類別選擇 -->
+                    <td>TYPE:</td>
+                    <td>
+                      <select name="look_item_3_type" id="look_item_3_type">
+                        <option value="tops">Tops</option>
+                        <option value="bottoms">Bottoms</option>
+                        <option value="outers">Outers</option>
+                        <option value="dress/skirts">Dress/Suits</option>
+                        <option value="bags/shoes">Bags/Shoes</option>
+                        <option value="accessories">Accessories</option>
+                      </select>
+                    </td>
+                    <!-- 單品上傳 -->
+                    <td>ITEM ID:</td>
+                    <td>
+                      <input
+                        type="text"
+                        placeholder="請輸入單品編號"
+                        name="look_item_3"
+                      />
+                    </td>
+                  </tr>
+                  <!-- 單品4 -->
+                  <tr>
+                    <!-- 單品類別選擇 -->
+                    <td>TYPE:</td>
+                    <td>
+                      <select name="look_item_4_type" id="look_item_4_type">
+                        <option value="tops">Tops</option>
+                        <option value="bottoms">Bottoms</option>
+                        <option value="outers">Outers</option>
+                        <option value="dress/skirts">Dress/Suits</option>
+                        <option value="bags/shoes">Bags/Shoes</option>
+                        <option value="accessories">Accessories</option>
+                      </select>
+                    </td>
+                    <!-- 單品上傳 -->
+                    <td>ITEM ID:</td>
+                    <td>
+                      <input
+                        type="text"
+                        placeholder="請輸入單品編號"
+                        name="look_item_4"
+                      />
+                    </td>
+                  </tr>
+                  <!-- 單品5 -->
+                  <tr>
+                    <!-- 單品類別選擇 -->
+                    <td>TYPE:</td>
+                    <td>
+                      <select name="look_item_5_type" id="look_item_5_type">
+                        <option value="tops">Tops</option>
+                        <option value="bottoms">Bottoms</option>
+                        <option value="outers">Outers</option>
+                        <option value="dress/skirts">Dress/Suits</option>
+                        <option value="bags/shoes">Bags/Shoes</option>
+                        <option value="accessories">Accessories</option>
+                      </select>
+                    </td>
+                    <!-- 單品上傳 -->
+                    <td>ITEM ID:</td>
+                    <td>
+                      <input
+                        type="text"
+                        placeholder="請輸入單品編號"
+                        name="look_item_5"
+                      />
+                    </td>
+                  </tr>
+                  <!-- 單品6 -->
+                  <tr>
+                    <!-- 單品類別選擇 -->
+                    <td>TYPE:</td>
+                    <td>
+                      <select name="look_item_6_type" id="look_item_6_type">
+                        <option value="tops">Tops</option>
+                        <option value="bottoms">Bottoms</option>
+                        <option value="outers">Outers</option>
+                        <option value="dress/skirts">Dress/Suits</option>
+                        <option value="bags/shoes">Bags/Shoes</option>
+                        <option value="accessories">Accessories</option>
+                      </select>
+                    </td>
+                    <!-- 單品上傳 -->
+                    <td>ITEM ID:</td>
+                    <td>
+                      <input
+                        type="text"
+                        placeholder="請輸入單品編號"
+                        name="look_item_6"
+                      />
+                    </td>
+                  </tr>
+                </table>
+                <!-- 描述填寫區 -->
+                <table class="t2 mt-4">
+                  <tr>
+                    <td>
+                      <textarea
+                        name=""
+                        id=""
+                        cols="50"
+                        rows="5"
+                        maxlength="55"
+                        placeholder="對於此搭配的簡短描述(選填)"
+                      ></textarea>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <!-- 按鈕區域 -->
+              <div class="form_btn">
+                <button class="btn btn1 text-white" type="submit">
+                  更新搭配
+                </button>
+                <button class="btn text-white btn-secondary" type="reset">
+                  重新填寫
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
